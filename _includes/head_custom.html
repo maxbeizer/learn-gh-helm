@@ -1,0 +1,14 @@
+<script>
+  // Shared storage key — must match the key used in header_custom.html
+  window.__themeStorageKey = 'color-theme';
+  // Apply theme before first paint to avoid flash of unstyled content
+  (function () {
+    var saved = localStorage.getItem(window.__themeStorageKey);
+    var theme = saved
+      ? saved
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>

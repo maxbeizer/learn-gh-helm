@@ -1,0 +1,312 @@
+// Dark/light mode theme switcher overrides for just-the-docs
+//
+// Color palette used below mirrors the values from just-the-docs dark.scss
+// and the _sass/support/_variables.scss palette:
+//
+//   Body background  : $grey-dk-300  #27262b
+//   Body text        : $grey-lt-300  #e6e1e8
+//   Headings         : $grey-lt-000  #f5f6fa
+//   Links            : lighten($blue-000, 10%) ≈ #60a3fb
+//   Sidebar bg       : $grey-dk-300  #27262b
+//   Button / card bg : $grey-dk-250  #302d36
+//   Code bg          : github-dark   #0d1117
+//   Table bg         : $grey-dk-250  #302d36
+//   Search bg        : $grey-dk-250  #302d36
+//   Border           : $grey-dk-200  #44434d
+//   Hover overlay    : darken(#27262b, 3%) ≈ #201f24
+//   Nav child link   : $grey-dk-000  #959396
+//   Primary button   : $blue-200     #264caf
+
+// ---------------------------------------------------------------------------
+// Dark mode overrides
+// ---------------------------------------------------------------------------
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  body {
+    background-color: #27262b;
+    color: #e6e1e8;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  #toctitle {
+    color: #f5f6fa;
+  }
+
+  a {
+    color: #60a3fb;
+  }
+
+  a:not([class]) {
+    text-decoration-color: #44434d;
+
+    &:hover {
+      text-decoration-color: rgba(96, 163, 251, 0.45);
+    }
+  }
+
+  hr {
+    background-color: #44434d;
+  }
+
+  blockquote {
+    border-left-color: #44434d;
+  }
+
+  // ---- Layout ----------------------------------------------------------
+
+  .side-bar {
+    background-color: #27262b;
+    border-right-color: #44434d;
+  }
+
+  .main-header {
+    background-color: #27262b;
+    border-bottom-color: #44434d;
+  }
+
+  .site-header {
+    border-bottom-color: #44434d;
+  }
+
+  .site-title {
+    color: #f5f6fa;
+
+    &:hover {
+      background-image: linear-gradient(
+        -90deg,
+        rgba(32, 31, 36, 1) 0%,
+        rgba(32, 31, 36, 0.8) 80%,
+        rgba(32, 31, 36, 0) 100%
+      );
+    }
+  }
+
+  .site-button:hover {
+    background-image: linear-gradient(
+      -90deg,
+      rgba(32, 31, 36, 1) 0%,
+      rgba(32, 31, 36, 0.8) 100%
+    );
+  }
+
+  // ---- Navigation ------------------------------------------------------
+
+  .nav-list {
+    .nav-list-link {
+      &:hover,
+      &.active {
+        color: #438ef1;
+        background-image: linear-gradient(
+          -90deg,
+          rgba(32, 31, 36, 1) 0%,
+          rgba(32, 31, 36, 0.8) 80%,
+          rgba(32, 31, 36, 0) 100%
+        );
+      }
+    }
+
+    .nav-list-expander {
+      color: #60a3fb;
+
+      &:hover {
+        background-image: linear-gradient(
+          -90deg,
+          rgba(32, 31, 36, 1) 0%,
+          rgba(32, 31, 36, 0.8) 100%
+        );
+      }
+    }
+
+    > .nav-list-item > .nav-list .nav-list-item {
+      .nav-list-link {
+        color: #959396;
+      }
+
+      .nav-list-expander {
+        color: #959396;
+      }
+    }
+  }
+
+  .nav-list.nav-category-list {
+    > .nav-list-item > .nav-list > .nav-list-item {
+      > .nav-list-link,
+      > .nav-list-expander {
+        color: #60a3fb;
+      }
+    }
+  }
+
+  .nav-category {
+    border-bottom-color: #44434d;
+  }
+
+  // ---- Search ----------------------------------------------------------
+
+  .search-input-wrap {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-input {
+    color: #e6e1e8;
+    background-color: #302d36;
+
+    @include mq(md) {
+      background-color: #27262b;
+    }
+
+    &:focus + .search-label .search-icon {
+      color: #60a3fb;
+    }
+  }
+
+  .search-label .search-icon {
+    color: #959396;
+  }
+
+  .search-results {
+    background-color: #302d36;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-result {
+    &:hover,
+    &.active {
+      background-color: #201f24;
+    }
+  }
+
+  .search-result-rel-url {
+    color: #e6e1e8;
+  }
+
+  .search-result-previews {
+    color: #e6e1e8;
+    border-left-color: #44434d;
+  }
+
+  .search-active .search-input {
+    background-color: #302d36;
+  }
+
+  .search-button {
+    background-color: #302d36;
+    border-color: rgba(96, 163, 251, 0.3);
+  }
+
+  .search-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  // ---- Code blocks -----------------------------------------------------
+
+  code {
+    background-color: #0d1117;
+    color: #e6e1e8;
+  }
+
+  pre,
+  pre.highlight,
+  div.highlight,
+  figure.highlight {
+    background-color: #0d1117;
+  }
+
+  // ---- Tables ----------------------------------------------------------
+
+  table {
+    th,
+    td {
+      border-color: #44434d;
+    }
+
+    th {
+      background-color: #302d36;
+      color: #f5f6fa;
+    }
+
+    tr {
+      background-color: #27262b;
+
+      &:nth-child(odd) {
+        background-color: #302d36;
+      }
+    }
+  }
+
+  // ---- Buttons ---------------------------------------------------------
+
+  .btn {
+    background-color: #302d36;
+    border-color: #44434d;
+    color: #e6e1e8;
+  }
+
+  .btn-primary {
+    background-color: #264caf;
+    color: #f5f6fa;
+  }
+
+  // ---- Icons -----------------------------------------------------------
+
+  .icon {
+    color: #60a3fb;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Theme toggle button
+// ---------------------------------------------------------------------------
+
+.theme-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: $font-size-5;
+  line-height: 1;
+  color: $link-color;
+  outline-offset: -1px;
+
+  &:hover {
+    background-image: linear-gradient(
+      -90deg,
+      rgba($feedback-color, 1) 0%,
+      rgba($feedback-color, 0.8) 100%
+    );
+  }
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #60a3fb;
+
+  &:hover {
+    background-image: linear-gradient(
+      -90deg,
+      rgba(32, 31, 36, 1) 0%,
+      rgba(32, 31, 36, 0.8) 100%
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Smooth transitions when switching themes
+// ---------------------------------------------------------------------------
+
+body,
+.side-bar,
+.main-header,
+.site-title,
+.nav-list-link,
+.search-input,
+.search-results,
+.btn {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
