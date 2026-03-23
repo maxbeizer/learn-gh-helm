@@ -299,14 +299,16 @@ html[data-theme="dark"] .theme-toggle {
 // Smooth transitions when switching themes
 // ---------------------------------------------------------------------------
 
-body,
-.side-bar,
-.main-header,
-.site-title,
-.nav-list-link,
-.search-input,
-.search-results,
-.btn {
-  transition: background-color 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease;
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .side-bar,
+  .main-header,
+  .site-title,
+  .nav-list-link,
+  .search-input,
+  .search-results,
+  .btn {
+    transition: background-color 0.2s ease, color 0.2s ease,
+      border-color 0.2s ease;
+  }
 }

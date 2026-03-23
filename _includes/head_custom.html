@@ -3,7 +3,8 @@
   window.__themeStorageKey = 'color-theme';
   // Apply theme before first paint to avoid flash of unstyled content
   (function () {
-    var saved = localStorage.getItem(window.__themeStorageKey);
+    var saved = null;
+    try { saved = localStorage.getItem(window.__themeStorageKey); } catch (e) {}
     var theme = saved
       ? saved
       : window.matchMedia('(prefers-color-scheme: dark)').matches
