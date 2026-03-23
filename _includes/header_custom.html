@@ -1,0 +1,68 @@
+<button
+  id="theme-toggle"
+  class="site-button theme-toggle"
+  aria-label="Toggle dark/light mode"
+  aria-pressed="false"
+  title="Toggle dark/light mode"
+>
+  <span id="theme-toggle-icon" aria-hidden="true"></span>
+</button>
+
+<script>
+  (function () {
+    // Must match the key defined in head_custom.html
+    var STORAGE_KEY = window.__themeStorageKey || 'color-theme';
+    var ICON_DARK = "🌙";
+    var ICON_LIGHT = "☀️";
+
+    function getTheme() {
+      return document.documentElement.getAttribute("data-theme") || "light";
+    }
+
+    function safePut(key, value) {
+      try { localStorage.setItem(key, value); } catch (e) {}
+    }
+
+    function safeGet(key) {
+      try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      safePut(STORAGE_KEY, theme);
+      updateIcon(theme);
+    }
+
+    function updateIcon(theme) {
+      var icon = document.getElementById("theme-toggle-icon");
+      var btn = document.getElementById("theme-toggle");
+      if (icon) {
+        icon.textContent = theme === "dark" ? ICON_LIGHT : ICON_DARK;
+      }
+      if (btn) {
+        btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      }
+    }
+
+    function toggle() {
+      setTheme(getTheme() === "dark" ? "light" : "dark");
+    }
+
+    // Wire up the button
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", toggle);
+    }
+
+    // Sync icon with current theme on load
+    updateIcon(getTheme());
+
+    // Follow system preference when no explicit choice has been saved
+    var systemPreference = window.matchMedia("(prefers-color-scheme: dark)");
+    systemPreference.addEventListener("change", function (e) {
+      if (!safeGet(STORAGE_KEY)) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    });
+  })();
+</script>
