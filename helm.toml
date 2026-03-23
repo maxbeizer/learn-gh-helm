@@ -7,7 +7,7 @@ owner = "maxbeizer"
 
 [agent]
 user = "maxbeizer"
-model = "gpt-4o"
+model = "gpt-4.1"
 max-per-hour = 3
 
 [notifications]
