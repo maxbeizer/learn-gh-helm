@@ -72,7 +72,20 @@ html[data-theme="dark"] {
   }
 
   .site-header {
+    background-color: #27262b;
     border-bottom-color: #44434d;
+  }
+
+  .aux-nav {
+    background-color: #27262b;
+  }
+
+  .aux-nav-list-item {
+    .btn {
+      color: #60a3fb;
+      background-color: #27262b;
+      border-color: transparent;
+    }
   }
 
   .site-title {
@@ -303,6 +316,8 @@ html[data-theme="dark"] .theme-toggle {
   body,
   .side-bar,
   .main-header,
+  .site-header,
+  .aux-nav,
   .site-title,
   .nav-list-link,
   .search-input,
