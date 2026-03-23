@@ -4,17 +4,13 @@ title: Home
 nav_order: 1
 ---
 
-# Learn gh-helm
+# Welcome to gh-helm
 
-> **This site was built by [gh-helm](https://github.com/maxbeizer/gh-helm)** — an autonomous developer agent backed by GitHub. Every page you read was generated from an issue, reviewed as a pull request, and merged by a human. The [repo history](https://github.com/maxbeizer/learn-gh-helm) is the tutorial.
+gh-helm is your essential tool for managing agent-driven development with ease. It automates the dual roles of project management and execution through two powerful agents: the **Project Agent** and the **Manager Agent**.
 
-## What is gh-helm?
+The **Project Agent** assists in creating, tracking, and managing tasks, while the **Manager Agent** oversees workflows, ensuring smooth collaboration and execution. Together, they empower developers to focus on what matters most—building great software.
 
-gh-helm is a `gh` CLI extension that provides two autonomous agents:
+This site was built by gh-helm. Dive in and explore how you can streamline your development process with gh-helm!
 
-- **Project Agent** — Claims issues from your project board, generates a code plan via AI, writes the code, and opens a draft PR.
-- **Manager Agent** — Monitors team activity, maps contributions to performance pillars, and posts observations to 1-1 repos.
-
-## Get Started
-
-Ready to try it? Head to [Getting Started](docs/getting-started) to install and configure gh-helm in your project.
+- [Getting Started](docs/getting-started.md)
+- [gh-helm Repository](https://github.com/maxbeizer/gh-helm)
