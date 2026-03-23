@@ -1,0 +1,28 @@
+title: Learn gh-helm
+description: A tutorial site for gh-helm — built by gh-helm itself.
+url: "https://maxbeizer.github.io"
+baseurl: "/learn-gh-helm"
+
+remote_theme: just-the-docs/just-the-docs
+
+permalink: pretty
+
+exclude:
+  - helm.toml
+  - helm-manager.toml
+  - .helm/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+aux_links:
+  "gh-helm on GitHub":
+    - "https://github.com/maxbeizer/gh-helm"
+  "This repo":
+    - "https://github.com/maxbeizer/learn-gh-helm"
+
+nav_sort: order
+
+footer_content: "Built by <a href=\"https://github.com/maxbeizer/gh-helm\">gh-helm</a> — an autonomous developer agent backed by GitHub."
+
+color_scheme: light

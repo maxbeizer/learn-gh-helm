@@ -1,0 +1,18 @@
+version = 1
+source-of-truth = "docs/SOURCE_OF_TRUTH.md"
+
+[project]
+board = 31
+owner = "maxbeizer"
+
+[agent]
+user = "maxbeizer"
+model = "gpt-4o"
+max-per-hour = 3
+
+[notifications]
+channel = ""
+
+[filters]
+status = "Ready"
+labels = ["agent-ready"]
